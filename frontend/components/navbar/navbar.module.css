@@ -1,0 +1,53 @@
+.container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: fit-content;
+    padding: 1rem;
+    background: none;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.logo img{
+    width: 100px;
+    height: auto;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.nav ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    list-style: none;
+}
+.nav ul li{
+    margin: 0 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+.nav ul li a{
+    color: black;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+} 
+.nav ul li img{
+    object-fit: cover;
+}
+.nav ul li a.activeLink{
+    background-color: var(--theme-color);
+}
+.nav ul li a:hover{
+    background-color: grey;
+}
