@@ -7,22 +7,19 @@
     height: fit-content;
     padding: 1rem;
     background: none;
-}
-.logo{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    position: relative;
 }
 .logo img{
-    width: 100px;
-    height: auto;
+    height: 3rem;
+    width: 100%;
+    align-self: flex-start;
 }
 .nav{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
+    top: 100%
 }
 .nav ul{
     display: flex;
@@ -32,22 +29,61 @@
     list-style: none;
 }
 .nav ul li{
-    margin: 0 1rem;
-    font-size: 1.5rem;
-    font-weight: 600;
+    font-size: 1.1rem;
 }
 .nav ul li a{
     color: black;
     text-decoration: none;
     display: flex;
     align-items: center;
+    padding: 0.5rem 1.5rem;
+    border-radius: 120px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 } 
 .nav ul li img{
     object-fit: cover;
 }
-.nav ul li a.activeLink{
+.nav ul li a.active{
     background-color: var(--theme-color);
+    border-radius: 120px;
+    color: white;
 }
 .nav ul li a:hover{
-    background-color: grey;
+    background-color: rgba(177, 175, 175, 0.173);
+    border-radius: 120px;
+    color: black;
+}
+.hamburger{
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    z-index: 2000;
+    margin-left: auto;
+    align-self: flex-end;
+}
+@media (max-width: 720px){
+    .nav{
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        border-top: 1px solid #ddd;
+        z-index: 1000;
+        padding: 1rem 0;
+    }
+    #show{
+        display: flex;
+    }
+    .nav ul {
+        flex-direction: column;
+        gap: 1rem;
+        align-items: center;
+    }
+    .hamburger{
+        display: block;
+    }
 }
