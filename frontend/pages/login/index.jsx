@@ -99,7 +99,7 @@ function Login() {
                       <p className={styles.subheading}>Today is a new day. It's your day. You shape it. Sign in to start ordering.</p>
                       <Form formFields={formFields} onSubmit={onSubmit} error={errors} errorMessages={errorMessages} submitButtonText="Sign in" formType="login" />
                       <div className={styles.noAccount}>
-                        <p>Don't you have an account? <span onClick={()=>navigate('/register')}>Sign Up</span></p>
+                        <p>Don't you have an account?&nbsp;<span onClick={()=>navigate('/register')}>Sign Up</span></p>
                       </div>
                       </div>
                     </div>
@@ -114,7 +114,7 @@ function Login() {
                     <p className={styles.heading}>Welcome Back 👋</p>
                     <p className={styles.subheading}>Today is a new day. It's your day. You shape it. Sign in to start ordering.</p>
                     <Form formFields={formFields} onSubmit={onSubmit} error={errors} errorMessages={errorMessages} submitButtonText="Sign in" />
-                    <p>Don't you have an account? <span onClick={()=>navigate('/register')}>Sign Up</span></p>
+                    <p>Don't you have an account?&nbsp;<span onClick={()=>navigate('/register')}>Sign Up</span></p>
                 </div>
                 )
             }

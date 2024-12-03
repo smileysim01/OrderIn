@@ -1,0 +1,39 @@
+.container{
+    display: flex;
+    flex-flow: column wrap;
+    margin: 2rem;
+    gap: 1rem;
+    align-items: center;
+    .heading{
+        display: inline-flex;
+        align-self: flex-start;
+        align-items: center;
+        gap: 1rem;
+        button{
+            background-color: var(--theme-color);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 100px;
+            border: none;
+            position: absolute;
+            right: 4rem;
+        }
+        button:hover{
+            background-color: rgba(252, 138, 6, 0.8);
+        }
+    }
+    .name{
+        display: inline-flex;
+        align-items: center;
+        gap: 1rem;
+        .nameIcon{
+            width: 93.61px;
+            height: 93.61px;
+            margin-right: 1rem;
+        }
+    }
+    .divider{
+        display: flex;
+        width: 50%;
+    }
+}

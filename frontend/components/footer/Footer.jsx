@@ -7,7 +7,7 @@ import tiktok from '../../src/assets/tiktok.png'
 import snapchat from '../../src/assets/snapchat.png'
 import { toast } from 'react-toastify'
 
-function footer({width}) {
+function Footer({width}) {
   return (
     <div className={styles.container}>
         <div className={width > 720 ? styles.content : styles.contentMobile}>
@@ -22,7 +22,7 @@ function footer({width}) {
                     <input type='text' placeholder='youremail@gmail.com'/>
                     <button onClick={()=>{toast.success("Subscribed successfully.")}}>Subscribe</button>
                 </span>
-                <p>we wont spam, read our <u>email policy</u></p>
+                <p>we wont spam, read our&nbsp;<u>email policy</u></p>
                 <div className={styles.socials}>
                     <img src={fb} alt="facebook"/>
                     <img src={insta} alt="instagram"/>
@@ -62,4 +62,4 @@ function footer({width}) {
   )
 }
 
-export default footer
+export default Footer

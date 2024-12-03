@@ -1,0 +1,184 @@
+.container {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.navBar {
+    display: flex;
+    flex-flow: row nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    padding: 0.5rem 0.5rem;
+    background-color: var(--theme-color);
+    position: relative;
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        top: 100%;
+
+        ul {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            list-style: none;
+            gap: 1.5rem;
+        }
+
+        li {
+            font-size: 1.1rem;
+
+            a {
+                color: white;
+                font-weight: 700;
+                text-decoration: none;
+                display: flex;
+                align-items: center;
+                padding: 0.5rem 0.5rem;
+                border-radius: 120px;
+                transition: background-color 0.3s ease, color 0.3s ease;
+            }
+
+            a.active {
+                background-color: black;
+                border-radius: 120px;
+                color: white;
+            }
+
+            a:hover {
+                background-color: rgba(177, 175, 175, 0.173);
+                border-radius: 120px;
+                color: black;
+            }
+        }
+    }
+
+    .hamburger {
+        display: none;
+        background: none;
+        border: none;
+        font-size: 1.5rem;
+        cursor: pointer;
+        z-index: 2000;
+        margin-left: auto;
+        align-self: flex-end;
+    }
+
+    @media (max-width: 720px) {
+        .nav {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            background-color: #fff;
+            border-top: 1px solid #ddd;
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        #show {
+            display: flex;
+        }
+
+        .nav ul {
+            flex-direction: column;
+            gap: 1rem;
+            align-items: center;
+        }
+        .nav ul li a{
+            color: black;
+        }
+        .hamburger {
+            display: block;
+        }
+    }
+}
+
+.restaurantDetails {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    height: fit-content;
+    padding: 2rem 3.5rem;
+    gap: 3rem;
+    h1{
+        font-weight: 700;
+        font-size: 2.75rem;
+        padding-bottom: 1rem;
+    }
+    .foodList{
+        display: flex;
+        flex-flow: row wrap;
+        gap: 1.5rem;
+    }
+    .foodItem{
+        width: 31rem;
+        height: fit-content;
+        display: flex;
+        flex-flow: row nowrap;
+        align-items: space-between;
+        justify-content: center;
+        padding: 1rem;
+        background: #FDFDFD;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        box-shadow: 5px 5px 34px rgba(0, 0, 0, 0.25);
+        border-radius: 12px;
+        position: relative;
+        h3{
+            font-weight: 600;
+            font-size: 1.25rem;
+        }
+        h2{
+            font-weight: 700;
+            font-size: 1.125rem;
+            margin-top: 1rem;
+        }
+        p{
+            font-size: 0.875rem;
+            margin-top: 1rem;
+        }
+        .foodImage{
+            width: 12.6rem;
+            height: 100%;
+            border-radius: 12px;
+            align-self: flex-end;
+        }
+        .plusBackground{
+            display: flex;
+            position: absolute;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 45px 0px 12px;
+            width: 4.5rem;
+            height: 4.5rem;
+            height: fit-content;
+            align-self: flex-end;
+            justify-content: center;
+            right: 1rem
+        }
+        .plus{
+            width: 3rem;
+            height: 3rem;
+            cursor: pointer;
+            margin: 0.5rem;
+        }
+        .plus:hover{
+            transform: scale(1.1);
+        }
+    }
+}
+
+#mobileContainer{
+    width: 100%;
+    padding: 1rem;
+    .foodList{
+        flex-flow: column wrap;
+    }
+}

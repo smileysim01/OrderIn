@@ -120,7 +120,7 @@ function ResetPwd() {
                       <p className={styles.subheading}>Today is a new day. It's your day. You shape it. Sign in to start ordering.</p> */}
                       <Form formFields={formFields} onSubmit={onSubmit} error={errors} errorMessages={errorMessages} submitButtonText="Update" formType="resetPwd" />
                       <div className={styles.noAccount}>
-                        <p>Ready to Sign in instead? <span onClick={()=>navigate('/')}>Sign In</span></p>
+                        <p>Ready to Sign in instead?&nbsp;<span onClick={()=>navigate('/')}>Sign In</span></p>
                       </div>
                       </div>
                     </div>
@@ -135,7 +135,7 @@ function ResetPwd() {
                     {/* <p className={styles.heading}>Welcome Back 👋</p>
                     <p className={styles.subheading}>Today is a new day. It's your day. You shape it. Sign in to start ordering.</p> */}
                     <Form formFields={formFields} onSubmit={onSubmit} error={errors} errorMessages={errorMessages} submitButtonText="Update" formType="resetPwd" />
-                    <p>Ready to Sign in instead? <span onClick={()=>navigate('/')}>Sign In</span></p>
+                    <p>Ready to Sign in instead?&nbsp;<span onClick={()=>navigate('/')}>Sign In</span></p>
                 </div>
                 )
             }

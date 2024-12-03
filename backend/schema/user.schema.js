@@ -7,6 +7,15 @@ const userSchema = new Schema({
         type: String,
         required: true,
     },
+    gender:{
+        type: String,
+    },
+    country:{
+        type: String,
+    },
+    img:{
+        type: String,
+    },
     email: {
         type: String,
         required: true,
@@ -19,6 +28,10 @@ const userSchema = new Schema({
     orders: {
         type: [Schema.ObjectId],
         ref: "Order"
+    },
+    cart: {
+        type: [Schema.ObjectId],
+        ref: "Cart"
     }
 });
 

@@ -1,16 +1,27 @@
 import {BrowserRouter, Routes, Route, Outlet} from 'react-router-dom'
+import { useState, useEffect } from 'react';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import {Login, Registration, ResetPwd,Home, Account, NotFound, Menu, Offers, Restaurants, Track} from "../pages"
+import {Login, Registration, ResetPwd,Home, Settings, NotFound, Menu, Offers, Restaurants, Track, RestaurantDetail, Cart, Checkout, Payment, Success} from "../pages"
 import Navbar from '../components/navbar/Navbar';
 import Promo from '../components/promo/Promo';
+import Footer from '../components/footer/Footer';
 
 function HomeLayout(){
+  // for responsiveness
+  const [width, setWidth] = useState(window.innerWidth);
+  // checking device size to make it responsive
+  useEffect(() => {
+    const handleResize = () => setWidth(window.innerWidth);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
   return (
     <div>
       <Promo/>
       <Navbar/>
       <Outlet/>
+      <Footer width={width} />
     </div>
   );
 }
@@ -26,10 +37,14 @@ function App() {
           <Route index element={<Home />} />
           <Route path="menu" element={<Menu />} />
           <Route path="offers" element={<Offers />} />
-          <Route path="restaurants" element={<Restaurants />} />
           <Route path="track" element={<Track />} />
-          <Route path="account" element={<Account />} />
+          <Route path="settings" element={<Settings />} />
+          <Route path="restaurants/:id" element={<RestaurantDetail />} />
         </Route>
+        <Route path="/cart" element={<Cart />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="/payment" element={<Payment />} />
+        <Route path="/payment/success" element={<Success/>}/>
         <Route path="*" element={<NotFound />} />
         
       </Routes>

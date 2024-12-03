@@ -27,4 +27,32 @@ router.get("/", async (req, res) => {
     }
 })
 
+router.get("/:id", async (req, res) => {
+    try {
+        const restaurant = await Restaurant.findById(req.params.id).populate("categories").populate("foodList");
+        if(!restaurant){
+            return res.status(404).json({message: "Restaurant not found."});
+        }
+        res.status(200).json({restaurant});
+    } catch (error) {
+        res.status(500).json({message: "Internal server error. Restaurant could not be fetched."});
+    }
+})
+
+router.patch("/:id", async (req,res) => {
+    try {
+        const restaurant = await Restaurant.findById(req.params.id);
+        if (!restaurant) {
+            return res.status(404).json({message: "Restaurant not found."});
+        }
+        const {name, address, phone, email, image, offers, categories, foodList} = req.body;
+        const updateRestaurant = await Restaurant.findByIdAndUpdate(req.params.id, {
+            name, address, phone, email, image, offers, categories, foodList
+        }, {new: true});
+        res.status(200).json({message: "Restaurant updated successfully.", restaurant: updateRestaurant});
+    } catch (error) {
+        res.status(500).json({message: "Internal server error. Restaurant could not be updated."});
+    }
+})
+
 module.exports = router;

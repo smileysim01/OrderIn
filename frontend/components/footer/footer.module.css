@@ -7,8 +7,6 @@
 .content{
     display: flex;
     flex-flow: row nowrap;
-    /* justify-content: space-between;
-    align-items: flex-start; */
     width: 100%;
     height: fit-content;
     gap: 2rem;
@@ -35,7 +33,8 @@
     position: relative;
     .subscribe{
         border: none;
-        display: inline-block;
+        display: inline-flex;
+        justify-content: space-between;
         position: relative;
         border-radius: 120px;
         background-color: rgb(202, 197, 197);
@@ -46,6 +45,7 @@
         color: rgba(0, 0, 0, 0.6);
         background: none;
         padding: 0.5rem;
+        width: 100%;
     }
     img{
         height: 2rem;
@@ -59,10 +59,10 @@
         border-radius: 120px;
         padding: 0.5rem;
         cursor: pointer;
-        margin-left: 3rem;
     }
     p{
         font-size: 0.7rem;
+        display: inline flex;
     }
 }
 .rightOne{
@@ -80,6 +80,7 @@ h3{
 }
 u{
     cursor: pointer;
+    color: black !important;
 }
 .contentMobile{
     display: flex;

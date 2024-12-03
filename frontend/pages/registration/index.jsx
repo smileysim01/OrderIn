@@ -130,7 +130,7 @@ function Registration() {
                       <p className={styles.subheading}>Today is a new day. It's your day. You shape it. Sign in to start ordering.</p>
                       <Form formFields={formFields} onSubmit={onSubmit} error={errors} errorMessages={errorMessages} submitButtonText="Sign up" formType="login" />
                       <div className={styles.noAccount}>
-                        <p>Already have an account? <span onClick={()=>navigate('/')}>Sign In</span></p>
+                        <p>Already have an account?&nbsp;<span onClick={()=>navigate('/')}>Sign In</span></p>
                       </div>
                       </div>
                     </div>
@@ -145,7 +145,7 @@ function Registration() {
                     <p className={styles.heading}>Welcome Back 👋</p>
                     <p className={styles.subheading}>Today is a new day. It's your day. You shape it. Sign in to start ordering.</p>
                     <Form formFields={formFields} onSubmit={onSubmit} error={errors} errorMessages={errorMessages} submitButtonText="Sign up" />
-                    <p>Already have an account? <span onClick={()=>navigate('/')}>Sign In</span></p>
+                    <p>Already have an account?&nbsp;<span onClick={()=>navigate('/')}>Sign In</span></p>
                 </div>
                 )
             }
