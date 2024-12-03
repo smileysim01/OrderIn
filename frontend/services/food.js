@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { addTokenToHeader } from '../utils/addToken'
 
+const URL = import.meta.env.VITE_API_URL;
 export const food = async (name) => {
     const headers = addTokenToHeader({ headers: {'Content-Type': 'application/x-www-form-urlencoded'} });
     try {
