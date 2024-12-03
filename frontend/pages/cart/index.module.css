@@ -1,17 +1,47 @@
 .container{
+    width: 23rem;
+    margin-top: 3rem;
+}
+
+.shareCart{
+    background-color: var(--theme-color);
     display: flex;
-    flex-flow: column wrap;
-    position: absolute;
+    padding: 2rem 0.5rem;
     align-items: center;
     justify-content: space-between;
-    width: 23rem;
+    img{
+        margin: 1rem;
+    }
+    p{
+        color: white;
+        font-weight: 600;
+    }
+    button{
+        width: 8rem;
+        background-color: white;
+        color: var(--theme-color);
+        border-radius: 100px;
+        border: none;
+        padding: 1rem;
+        cursor: pointer;
+    }
+    button:hover{
+        color: black
+    }
+}
+
+.cartContainer{
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    justify-content: space-between;
     height: fit-content;
-    left: 65rem;
-    top: 20rem;
+    position: absolute;
     background-color: #F9F9F9;
     box-sizing: border-box;
     border: 1px solid rgba(0, 0, 0, 0.11);
     border-radius: 12px;
+    margin-top: 1rem;
 }
 .cart{
     .myBasket{
@@ -168,4 +198,3 @@
 #block:hover{
     color: white;
 }
-    

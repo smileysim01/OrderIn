@@ -20,50 +20,54 @@ function Payment() {
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
     }, []);
-  return (
-    <div className={styles.container}>
-        <Navbar/>
-        <div className={styles.left}>
-            <h2 className={styles.checkoutTitle}><img src={back} alt="back" className={styles.backIcon}/>Your Order Details</h2>
-            <div className={styles.zeldapay}>
-                <img src={zeldapay} alt="zeldapay" className={styles.paymentImg} />
-                <span>
-                    <h4>ZeldaPay</h4>
-                    <p>Available balance: £183.43</p>
-                </span>
+    return (
+        <div className={styles.container}>
+            <Navbar />
+            <h2 className={styles.checkoutTitle}><img src={back} alt="back" className={styles.backIcon} onClick={() => navigate(-1)} />Choose and Pay</h2>
+            <div className={styles.payment}>
+                <div className={styles.left}>
+
+                    <div className={styles.zeldapay}>
+                        <img src={zeldapay} alt="zeldapay" className={styles.paymentImg} />
+                        <span>
+                            <h4>ZeldaPay</h4>
+                            <p>Available balance: £183.43</p>
+                        </span>
+                        <h4>&gt;</h4>
+                    </div>
+                    <div className={styles.otherPayments}>
+                        <label for="maestro" className={styles.paymentOption}>
+                            <img src={maestrokard} alt="maestro" className={styles.paymentImg} />
+                            <p>MaestroKard</p>
+                            <input type="radio" name="payment" id="maestro" />
+                        </label>
+                        <label for="paypol" className={styles.paymentOption}>
+                            <img src={paypol} alt="paypol" className={styles.paymentImg} />
+                            <p>Paypol</p>
+                            <input type="radio" name="payment" id="paypol" />
+                        </label>
+                        <label for="strike" className={styles.paymentOption}>
+                            <img src={strike} alt="strike" className={styles.paymentImg} />
+                            <p>Strike</p>
+                            <input type="radio" name="payment" id="strike" />
+                        </label>
+                        <label for="debit" className={styles.paymentOption}>
+                            <h4>+</h4>
+                            <p>Add Debit Card</p>
+                        </label>
+                    </div>
+                </div>
+                <div className={styles.right}>
+                    <span className={styles.total}>
+                        <p>Amount to be paid</p>
+                        <h4>₹240</h4>
+                    </span>
+                    <button className={styles.paymentBtn} onClick={() => navigate("/payment/success")}>Proceed Payment</button>
+                </div>
             </div>
-            <div className={styles.otherPayments}>
-                <label for="maestro" className={styles.paymentOption}>
-                    <input type="radio" name="payment" id="maestro" />
-                    <img src={maestrokard} alt="maestro" className={styles.paymentImg} />
-                    <p>MaestroKard</p>
-                </label>
-                <label for="paypol" className={styles.paymentOption}>
-                    <input type="radio" name="payment" id="paypol" />
-                    <img src={paypol} alt="paypol" className={styles.paymentImg} />
-                    <p>Paypol</p>
-                </label>
-                <label for="strike" className={styles.paymentOption}>
-                    <input type="radio" name="payment" id="strike" />
-                    <img src={strike} alt="strike" className={styles.paymentImg} />
-                    <p>Strike</p>
-                </label>
-                <label for="debit" className={styles.paymentOption}>
-                    <h4>+</h4>
-                    <p>Add Debit Card</p>
-                </label>
-            </div>
+            <Footer width={width} />
         </div>
-        <div className={styles.right}>
-            <span className={styles.total}>
-                <p>Amount to be paid</p>
-                <p>₹240</p>
-            </span>
-            <button className={styles.paymentBtn} onClick={()=>navigate("/payment/success")}>Proceed Payment</button>
-        </div>
-        <Footer width={width} />
-    </div>
-  )
+    )
 }
 
 export default Payment

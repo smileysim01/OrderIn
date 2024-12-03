@@ -82,7 +82,7 @@ function RestaurantDetail() {
         </div>
       </div>
 
-      <div className={styles.restaurantDetails} id={width > 720 ? styles.desktopContainer : styles.mobileContainer}>
+      <div className={`${styles.restaurantDetails} ${totalAmount > 0 ? styles.withCart : ''}`} id={width > 720 ? styles.desktopContainer : styles.mobileContainer}>
         {isLoading ? (
           <p>Loading...</p>
         ) : restaurantData && restaurantData.categories ? (
@@ -116,7 +116,9 @@ function RestaurantDetail() {
           <p>No categories found.</p>
         )}
       </div>
-      <Cart cartItems={cartItems} restaurantData={restaurantData} />
+      <div >
+          {totalAmount > 0 ? <Cart cartItems={cartItems} restaurantData={restaurantData} /> : null}
+        </div>
     </div>
   )
 }

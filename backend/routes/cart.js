@@ -69,40 +69,32 @@ router.delete("/item/:itemId", authMiddleware, async (req, res) => {
     try {
         const { itemId } = req.params;
 
-        // Find the cart associated with the authenticated user
         const cart = await Cart.findOne({ creator: req.user }).populate("foodList.item");
         if (!cart) {
             return res.status(404).json({ message: "Cart not found." });
         }
 
-        // Find the item in the cart
         const itemIndex = cart.foodList.findIndex((item) => item.item._id.toString() === itemId);
         if (itemIndex === -1) {
             return res.status(404).json({ message: "Food item not found in the cart." });
         }
 
-        // Extract the item to be removed
         const itemToRemove = cart.foodList[itemIndex];
         const itemPrice = itemToRemove.item.price || 0;
 
-        // Update quantity or remove the item
         if (itemToRemove.quantity > 1) {
-            // Decrease quantity if more than 1
             cart.foodList[itemIndex].quantity -= 1;
             cart.totalAmount -= itemPrice;
         } else {
-            // Remove the item completely if quantity is 1
             cart.foodList.splice(itemIndex, 1);
             cart.totalAmount -= itemPrice;
         }
 
-        // Revert `foodList` to unpopulated format before saving
         cart.foodList = cart.foodList.map((item) => ({
-            item: item.item._id, // Store only the ObjectId
+            item: item.item._id,
             quantity: item.quantity,
         }));
 
-        // Save the updated cart
         await cart.save();
         return res.status(200).json({ message: "Item removed successfully.", cart });
     } catch (error) {

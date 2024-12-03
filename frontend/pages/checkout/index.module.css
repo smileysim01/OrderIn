@@ -1,0 +1,247 @@
+.container {
+
+    .checkoutTitle {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: flex-start;
+        gap: 0.5rem;
+        width: 100%;
+        background: linear-gradient(90deg,
+                rgba(255, 255, 255, 0.2) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0.1) 100%);
+        padding: 1rem;
+        border-radius: 1rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: black;
+        margin-bottom: 1rem;
+        margin-left: 0.8rem;
+        img{
+            cursor: pointer;
+        }
+    }
+
+    .checkout {
+        display: inline-flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 0 2rem;
+        gap: 1.5rem;
+        width: 100%;
+        margin-bottom: 2rem;
+        background: linear-gradient(90deg,
+                rgba(255, 255, 255, 0.2) 0%,
+                rgba(255, 255, 255, 0.2) 50%,
+                rgba(255, 255, 255, 0.1) 50%,
+                rgba(255, 255, 255, 0.1) 100%);
+
+        .checkoutCart {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 1rem;
+            width: 60%;
+            border: 1px solid #03081F;
+            border-radius: 1rem;
+            padding: 1rem;
+        }
+
+        .foodItem {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            width: 100%;
+            background: linear-gradient(90deg,
+                    rgba(255, 255, 255, 0.2) 0%,
+                    rgba(255, 255, 255, 0.2) 50%,
+                    rgba(255, 255, 255, 0.1) 50%,
+                    rgba(255, 255, 255, 0.1) 100%);
+
+            padding-bottom: 0.8rem;
+            border-bottom: 1px solid #202938;
+
+            img {
+                width: 3rem;
+                height: auto;
+            }
+
+            .foodDetails {
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.1rem;
+                width: 100%;
+
+            }
+
+            .name {
+                font-size: 0.8rem;
+                font-weight: 600;
+            }
+
+            .quantity {
+                font-size: 0.7rem;
+                color: #83858A;
+            }
+
+            .price {
+                font-size: 0.9rem;
+                color: #028643;
+                font-weight: 600;
+            }
+        }
+
+        .notes {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.3rem;
+            width: 100%;
+            /* margin-bottom: 1rem; */
+
+            p {
+                font-size: 0.7rem;
+                color: #83858A;
+            }
+
+            input {
+                width: 100%;
+                height: 2rem;
+                border-radius: 1rem;
+                border: 1px solid #03081F;
+                padding: 1rem;
+                color: black;
+            }
+
+            input:focus {
+                outline: none;
+                border: 1px solid var(--theme-color);
+            }
+        }
+
+        .right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            gap: 0.5rem;
+            width: 40%;
+
+            .deliveryTitle {
+                display: inline-flex;
+                justify-content: flex-start;
+                align-items: center;
+                gap: 0.5rem;
+                border: 1px solid #03081F;
+                border-radius: 2rem;
+                padding: 0.5rem;
+                width: 100%;
+
+                img {
+                    border: 1px solid #03081F;
+                    border-radius: 50%;
+                    width: 2rem;
+                    height: auto;
+                    padding: 0.4rem;
+                    color: var(--theme-color);
+                }
+
+                .deliveryAddress {
+                    width: 100%;
+
+                    h5 {
+                        font-size: 0.8rem;
+                        font-weight: 600;
+                    }
+
+                    p {
+                        font-size: 0.6rem;
+                        color: #83858A;
+                    }
+                }
+
+                h4 {
+                    color: var(--theme-color);
+                    margin-right: 0.5rem;
+                }
+            }
+            .calculate {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: flex-start;
+                gap: 0.5rem;
+                border-top: 1px solid #03081F;
+                border-bottom: 1px solid #03081F;
+                width: 100%;
+                padding-top: 1rem;
+                padding-bottom: 0.5rem;
+                color: #83858A;
+                
+                .items {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 0.5rem;
+                    width: 100%;
+                    font-size: 0.8rem;
+                }
+
+                .tax {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 0.5rem;
+                    width: 100%;
+                    font-size: 0.9rem;
+                }
+            }
+
+            .subtotal {
+                display: flex;
+                flex-flow: column nowrap;
+                align-items: flex-start;
+                gap: 0.5rem;
+                width: 100%;
+                
+                .subtotalTitle {
+                    display: flex;
+                    flex-flow: row nowrap;
+                    justify-content: space-between;
+                    align-items: center;
+                    gap: 0.5rem;
+                    width: 100%;
+                    font-size: 1rem;
+
+                    .subtotalPrice {
+                        font-weight: 600;
+                        font-size: 1.2rem;
+                    }
+                }
+
+            }
+
+            .checkoutButton {
+                margin-top: 2rem;
+                background-color: var(--theme-color);
+                color: white;
+                border: none;
+                border-radius: 120px;
+                padding: 0.5rem 1rem;
+                width: 100%;
+                cursor: pointer;
+            }
+        }
+    }
+
+    .similarRestaurants{
+        padding: 2rem;
+    }
+}
