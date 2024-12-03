@@ -1,8 +1,8 @@
 import axios from 'axios'
 import { addTokenToHeader } from '../utils/addToken'
 
+const URL = import.meta.env.VITE_API_URL;
 export const getCart = async () => {
-    const URL = import.meta.env.VITE_API_URL;
     const headers = addTokenToHeader({ headers: {'Content-Type': 'application/x-www-form-urlencoded'} });
     try {
         const response = await axios.get(`${URL}/OrderIn/api/v1/user/cart`, {headers});
@@ -20,7 +20,6 @@ export const getCart = async () => {
 }
 
 export const updateCart = async (data) => {
-    const URL = import.meta.env.VITE_API_URL;
     const headers = addTokenToHeader({ headers: {'Content-Type': 'application/x-www-form-urlencoded'} });
     try {
         const response = await axios.patch(`${URL}/OrderIn/api/v1/user/cart`, data, {headers});
@@ -38,7 +37,6 @@ export const updateCart = async (data) => {
 }
 
 export const deleteCartItem = async (itemId) => {
-    const URL = import.meta.env.VITE_API_URL;
     const headers = addTokenToHeader({ headers: {'Content-Type': 'application/x-www-form-urlencoded'} });
     try {
         const response = await axios.delete(`${URL}/OrderIn/api/v1/user/cart/item/${itemId}`, {headers});

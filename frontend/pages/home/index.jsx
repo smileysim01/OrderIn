@@ -85,10 +85,11 @@ function Home() {
           className={styles.homeSecond}
         /> */}
         <div className={styles.header}>
-          <h1>Up to -40% 🎊 Order.in exclusive deals</h1>
-          {/* <button className={styles.hamburger} onClick={toggleMenu}>
+          <h1 className={styles.headerTitle}>Up to -40% 🎊 Order.in exclusive deals</h1>
+          <h1 className={styles.headerResponsiveTitle}>Up to -40% Discount Offers 🎊</h1>
+          <button className={styles.hamburger} onClick={toggleMenu}>
             ☰
-          </button> */}
+          </button>
           <div className={styles.foodTiles} id={isMenuOpen ? styles.show : ""}>
             <ul>
               <li onClick={toggleMenu}>Vegan</li>

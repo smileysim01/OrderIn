@@ -2,7 +2,6 @@ import axios from 'axios'
 import { addTokenToHeader } from '../utils/addToken'
 
 export const food = async (name) => {
-    const URL = import.meta.env.VITE_API_URL;
     const headers = addTokenToHeader({ headers: {'Content-Type': 'application/x-www-form-urlencoded'} });
     try {
         const response = await axios.get(`${URL}/OrderIn/api/v1/food/${name}`, {headers});

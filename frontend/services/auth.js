@@ -1,8 +1,9 @@
 import axios from 'axios'
 import { addTokenToHeader } from '../utils/addToken'
 
+const URL = import.meta.env.VITE_API_URL;
+
 export const register = async (data) => {
-    const URL = import.meta.env.VITE_API_URL;
     const headers = addTokenToHeader({ headers: {'Content-Type': 'application/x-www-form-urlencoded'} });
     try {
         const response = await axios.post(`${URL}/OrderIn/api/v1/user/register`, data, {headers});
@@ -21,7 +22,6 @@ export const register = async (data) => {
 }
 
 export const login = async (data) => {
-    const URL = import.meta.env.VITE_API_URL;
     const headers = addTokenToHeader({ headers: {'Content-Type': 'application/x-www-form-urlencoded'} });
     try {
         const response = await axios.post(`${URL}/OrderIn/api/v1/user/login`, data, {headers});
@@ -39,7 +39,6 @@ export const login = async (data) => {
 }
 
 export const resetPwd = async (data) => {
-    const URL = import.meta.env.VITE_API_URL;
     const headers = addTokenToHeader({ headers: {'Content-Type': 'application/x-www-form-urlencoded'} });
     try {
         const response = await axios.patch(`${URL}/OrderIn/api/v1/user/resetPwd`, data, {headers});
@@ -56,7 +55,6 @@ export const resetPwd = async (data) => {
 }
 
 export const getAccount = async () => {
-    const URL = import.meta.env.VITE_API_URL;
     const headers = addTokenToHeader({ headers: {'Content-Type': 'application/x-www-form-urlencoded'} });
     try {
         const response = await axios.get(`${URL}/OrderIn/api/v1/user/getAccount`, {headers});
@@ -74,7 +72,6 @@ export const getAccount = async () => {
 }
 
 export const settings = async (data) => {
-    const URL = import.meta.env.VITE_API_URL;
     const headers = addTokenToHeader({ headers: {'Content-Type': 'application/x-www-form-urlencoded'} });
     try {
         const response = await axios.patch(`${URL}/OrderIn/api/v1/user/settings`, data, {headers});
