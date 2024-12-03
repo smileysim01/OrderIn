@@ -42,7 +42,7 @@ router.post("/login", async (req, res) => {
         }
         const payload = {id: user._id};
         const token = jwt.sign(payload, process.env.JWT_SECRET);
-        res.status(200).json({message: "Login successful.", token});
+        res.status(200).json({message: "Login successful.", token: token, name: user.name});
     } catch(err) {
         res.status(500).json({message: "Internal server error. Login failed."});
     }

@@ -24,7 +24,7 @@ function Navbar() {
           <li><Link to="/home/track" className={isActive('/home/track') ? styles.active : null} onClick={toggleMenu}>Track Order</Link></li>
         {
             localStorage.getItem("token") ?
-                <li><Link to="/home/settings"><img src={account} alt='account'/>Hey {localStorage.getItem("name")}</Link></li>
+                <li><Link to="/home/settings"><img src={account} alt='account'/>Hey {localStorage.getItem("name") || "Foodie"}</Link></li>
                 :
                 <li><Link to="/"><img src={account} alt='account'/>Login/Signup</Link></li>
         }

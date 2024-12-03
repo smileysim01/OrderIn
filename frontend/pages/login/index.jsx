@@ -11,12 +11,12 @@ import Footer from '../../components/footer/Footer'
 
 function Login() {
     const navigate = useNavigate()
-    // useEffect(() => {
-    //     const token = localStorage.getItem("token");
-    //     if (token) {
-    //       navigate("/home");
-    //     }
-    //   }, [navigate]);
+    useEffect(() => {
+        const token = localStorage.getItem("token");
+        if (token) {
+          navigate("/home");
+        }
+      }, [navigate]);
       const onChange = (e) => {
         setFormData({
           ...formData,

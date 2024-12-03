@@ -29,6 +29,7 @@ export const login = async (data) => {
             status: response ? response.status : 200,
             message: response.data.message ? response.data.message : "User login successful.",
             token: response.data.token ? response.data.token : null,
+            name: response.data.name ? response.data.name : null
         }
     } catch (error) {
         throw {
